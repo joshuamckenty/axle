@@ -1,0 +1,667 @@
+    1  apt-get install git-core
+    2  git clone https://github.com/cloudfoundry-community/inception-server.git
+    3  cd inception-server/
+    4  ls
+    5  ls -al
+    6  bundle
+    7  apt-get install bundler
+    8  apt-get update
+    9  apt-get install bundler
+   10  bundle
+   11  apt-cache search knife
+   12  apt-get install chef
+   13  ls
+   14  ls -al
+   15  bundle
+   16  gem install bundler
+   17  bundle
+   18  cd inception-server/
+   19  bundle
+   20  screen
+   21  ls
+   22  ls -al
+   23  bundle
+   24  ls
+   25  rake
+   26  gem install bundler
+   27  rake
+   28  ls
+   29  cd inception-server/
+   30  ls
+   31  ls -al
+   32  rake
+   33  knife exec
+   34  chef help
+   35  knife --help
+   36  knife solo cook
+   37  ls
+   38  ls -al
+   39  chruby
+   40  more README.md 
+   41  bundle exec bin/inception
+   42  bundle exec bin/inception deploy
+   43  bundle exec bin/inception
+   44  bundle exec bin/inception tmux
+   45  bundle exec bin/inception-server 
+   46  bundle exec bin/inception-server deploy
+   47  ls
+   48  ls -al
+   49  apt-cache search chruby
+   50  wget -O chruby-0.3.7.tar.gz https://github.com/postmodern/chruby/archive/v0.3.7.tar.gz
+   51  tar -xzvf chruby-0.3.7.tar.gz
+   52  cd chruby-0.3.7/
+   53  sudo make install
+   54  sudo ./scripts/setup.sh
+   55  screen -rd
+   56  screen
+   57  irb
+   58  gem uninstall bosh
+   59  gem uninstall bosh_cli_plugin_micro
+   60  gem uninstall bosh-cli-plugin-micro
+   61  gem list
+   62  gem list | grep bosh
+   63  ls -al
+   64  cd bosh-bootstrap/
+   65  ls
+   66  ls -al
+   67  cd lib
+   68  ls
+   69  ls -al
+   70  cd ..
+   71  cd bin
+   72  ls
+   73  ls -al
+   74  vim bosh-bootstrap 
+   75  ls
+   76  ls -al
+   77  cd ..
+   78  ls -al
+   79  cd lib
+   80  ls
+   81  ls -al
+   82  ls
+   83  ls -al
+   84  cd bosh
+   85  ls
+   86  cd ..
+   87  ls
+   88  cd ..
+   89  ls
+   90  ls -al
+   91  more Gemfile
+   92  ls -al
+   93  cd lib
+   94  ls
+   95  ls -al
+   96  cd bosh
+   97  ls
+   98  ls -al
+   99  cd cli/
+  100  ls
+  101  ls -al
+  102  cd commands/
+  103  ls
+  104  cd ..
+  105  ls
+  106  cd ..
+  107  ls
+  108  ls -al
+  109  cd bosh-bootstrap/
+  110  ls
+  111  ls -al
+  112  cd cli
+  113  ls
+  114  ls -al
+  115  cd cd ..
+  116  cd ..
+  117  ls
+  118  cd ..
+  119  ls
+  120  cd bosh/bosh_cli_plugin_micro/
+  121  ls
+  122  ls -al
+  123  pwd
+  124  cd
+  125  bosh micro status
+  126  screen -rd
+  127  ls -al
+  128  bosh micro
+  129  rbenv
+  130  locate chruby
+  131  source /usr/local/share/chruby/auto.sh
+  132  ruby --version
+  133  bosh
+  134  bosh micro
+  135  chruby
+  136  /usr/local/share/chruby/auto.sh
+  137  /usr/local/share/chruby/chruby.sh
+  138  ls -al
+  139  source /usr/local/share/chruby/chruby.sh
+  140  chruby
+  141  chruby ruby-2.0.0-p247
+  142  bosh micro
+  143  bosh micro deployments
+  144  ls -al
+  145  bosh micro deploy
+  146  ./bosh-bootstrap/bin/bosh-bootstrap 
+  147  ./bosh-bootstrap/bin/bosh-bootstrap deploy
+  148  ls -al
+  149  more .fog 
+  150  vim .fog 
+  151  ./bosh-bootstrap/bin/bosh-bootstrap deploy
+  152  ls
+  153  ls -al
+  154  cd .microbosh/
+  155  ls
+  156  ls -al
+  157  cd deployments/
+  158  ls
+  159  ls -al
+  160  vim bosh-deployments.yml 
+  161  rm bosh-deployments.yml 
+  162  cd ..
+  163  ls
+  164  ls -al
+  165  cd deployments/firstbosh/
+  166  ls
+  167  vim micro_bosh.yml 
+  168  bosh micro deploy
+  169  ls -al
+  170  cd ..
+  171  bosh micro deploy firstbosh
+  172  ls -al
+  173  cd firstbosh/
+  174  ls
+  175  ls -al
+  176  cd ..
+  177  ls
+  178  ls -al
+  179  vim bosh-deployments.yml 
+  180  ls -al
+  181  rm bosh-deployments.yml 
+  182  ls -al
+  183  cd ..
+  184  ls
+  185  ls -al
+  186  vim settings.yml 
+  187  ls
+  188  ls -al
+  189  cd ..
+  190  ls
+  191  ls -al
+  192  bosh micro help
+  193  bosh micro deploy
+  194  bosh micro deployment --help
+  195  ls -al
+  196  cd bosh
+  197  ls
+  198  git status
+  199  git diff
+  200  ls -al
+  201  cd ..
+  202  cd bosh-bootstrap/
+  203  git status
+  204  git diff
+  205  ls -al
+  206  which bosh-bootstrap
+  207  ./bin/bosh-bootstrap --help
+  208  ./bin/bosh-bootstrap deploy
+  209  cd ..
+  210  vim .microbosh/deployments/firstbosh/
+  211  vim .microbosh/deployments/firstbosh/micro_bosh.yml 
+  212  bundle exec bosh -n micro deploy --update-if-exists /home/ubuntu/.microbosh/deployments/firstbosh/bosh-stemcell-latest-openstack-kvm-ubuntu.tgz
+  213  cd bosh-bootstrap/
+  214  bundle exec bosh -n micro deploy --update-if-exists /home/ubuntu/.microbosh/deployments/firstbosh/bosh-stemcell-latest-openstack-kvm-ubuntu.tgz
+  215  cd ..
+  216  bosh -n micro deploy --update-if-exists /home/ubuntu/.microbosh/deployments/firstbosh/bosh-stemcell-latest-openstack-kvm-ubuntu.tgz
+  217  vim .microbosh/deployments/firstbosh/micro_bosh.yml 
+  218  bosh -n micro deploy --update-if-exists /home/ubuntu/.microbosh/deployments/firstbosh/bosh-stemcell-latest-openstack-kvm-ubuntu.tgz
+  219  rm .microbosh/deployments/bosh-deployments.yml 
+  220  bosh -n micro deploy --update-if-exists /home/ubuntu/.microbosh/deployments/firstbosh/bosh-stemcell-latest-openstack-kvm-ubuntu.tgz
+  221  ./bosh-bootstrap/bin/bosh-bootstrap deploy
+  222  vim .microbosh/deployments/firstbosh/micro_bosh.yml 
+  223  ./bosh-bootstrap/bin/bosh-bootstrap deploy
+  224  ls -al
+  225  cd .microbosh/
+  226  ls
+  227  ls -al
+  228  cd deployments/
+  229  ls
+  230  vim bosh-deployments.yml 
+  231  ls -al
+  232  cd firstbosh/
+  233  ls
+  234  ls -al
+  235  vim micro_bosh.yml 
+  236  ls -al
+  237  cd ..
+  238  ls -al
+  239  cd ..
+  240  cd bosh-bootstrap/
+  241  ls
+  242  ls -al
+  243  bundle exec bosh -n micro deploy
+  244  rake bosh -n micro deploy
+  245  cd ..
+  246  ls -al
+  247  rm bosh-deployments.yml 
+  248  ls -al
+  249  rm bosh-registry.log 
+  250  ls -al
+  251  more .fog 
+  252  cd .microbosh/
+  253  ls
+  254  ls -al
+  255  bundle exec bosh -n micro deploy
+  256  bundle exec bosh -n micro deploy --update-if-exists /home/ubuntu/.microbosh/deployments/firstbosh/bosh-stemcell-latest-openstack-kvm-ubuntu.tgz
+  257  ls -al
+  258  cd ..
+  259  ls -al
+  260  bosh help
+  261  bosh target
+  262  bosh releases
+  263  bosh target 
+  264  bosh target https://205.234.30.251:25555
+  265  bosh releases
+  266  ls -al
+  267  vim bat-openstack-dynamic.yml 
+  268  ls -al
+  269  vim .bashrc 
+  270  source .bashrc
+  271  ls -al
+  272  cd bosh/bat/
+  273  ls
+  274  ls -al
+  275  bundle exec rake bat:env
+  276  bundle exec rake bat
+  277  ls -al
+  278  cd 
+  279  vim bat-openstack-dynamic.yml 
+  280  cd bosh/bat
+  281  bundle exec rake bat
+  282  ls -al
+  283  cd ..
+  284  ls
+  285  ls -al
+  286  cd .ssh/
+  287  ls
+  288  ls -al
+  289  cd
+  290  ls -al
+  291  cd .microbosh/
+  292  ls
+  293  ls -al
+  294  cd ssh/
+  295  ls
+  296  ls -al
+  297  cp firstbosh ~/
+  298  cp firstbosh ~/bosh/bat/
+  299  curl -s http://spiff.cfapps.io/install.sh | bash
+  300  bosh ssh
+  301  cd
+  302  bosh deployments
+  303  bosh micro ssh
+  304  bosh micro help
+  305  bosh micro
+  306  bosh micro agent ping
+  307  bosh micro deployments
+  308  bosh deployments
+  309  bosh target
+  310  bosh status
+  311  bosh upload stemcell http://bosh-jenkins-artifacts.s3.amazonaws.com/bosh-stemcell/openstack/bosh-stemcell-latest-openstack-kvm-ubuntu.tgz
+  312  bosh stemcells
+  313  cd bosh
+  314  ls
+  315  bundle install --local
+  316  bundle exec rake release:create_dev_release
+  317  bosh upload release /home/ubuntu/bosh/release/dev_releases/bosh-13.1-dev.yml
+  318  bosh releases
+  319  cd 
+  320  cd .microbosh/deployments/
+  321  ls
+  322  ls -al
+  323  mkdir bosh-openstack
+  324  cd bosh-openstack/
+  325  ls
+  326  cp ~/bosh/release/examples/bosh-openstack-manual.yml bosh-openstack.yml
+  327  ls -al
+  328  vim bosh-openstack.yml 
+  329  cd
+  330  bosh deployment .microbosh/deployments/bosh-openstack/bosh-openstack.yml 
+  331  bosh deploy
+  332  bosh status
+  333  bosh deployments
+  334  bosh delete deployment
+  335  bosh delete deployment bosh-openstack
+  336  bosh deployments
+  337  bosh deployment .microbosh/deployments/bosh-openstack/bosh-openstack.yml 
+  338  bosh deploy
+  339  bosh delete deployment bosh-openstack
+  340  bosh deployment .microbosh/deployments/bosh-openstack/bosh-openstack.yml 
+  341  bosh deploy
+  342  bosh task 70 --debug
+  343  bosh deploy
+  344  bosh vms
+  345  vim .fog
+  346  fog
+  347  ls -al
+  348  cd .microbosh/
+  349  ls
+  350  ls -al
+  351  cd deployments/
+  352  ls
+  353  ls -al
+  354  cd
+  355  bosh delete deployment bosh-openstack
+  356  env
+  357  vim .bashrc
+  358  more /home/ubuntu/.microbosh/ssh/firstbosh 
+  359  source .bashrc 
+  360  ls -al
+  361  bundle exec rake bat
+  362  cd bosh/bat/
+  363  bundle exec rake bat
+  364  ls -al
+  365  bosh target
+  366  ls -al
+  367  cd
+  368  ls
+  369  ls -al
+  370  vim bat-openstack-dynamic.yml 
+  371  bosh target
+  372  bosh status
+  373  vim /home/ubuntu/.microbosh/deployments/bosh-openstack/bosh-openstack.yml
+  374  bosh status
+  375  vim /home/ubuntu/.bosh_config
+  376  ls -al
+  377  source .bashrc
+  378  cd bosh/bat
+  379  bundle exec rake bat
+  380  ssh: vcap@205.234.30.250 'echo c1oudc0w | sudo -S pkill -9 agent'
+  381* ssh vcap@205.234.30.250 'echo c1oudc0w | sudo -S pkill -9 agent'bosh
+  382  bosh cck
+  383  bosh delete deployment bosh-openstack
+  384  ls -al
+  385  cd
+  386  cd bosh/bat/fi
+  387  cd bosh/bat/
+  388  ls
+  389  ls -al
+  390  vim /home/ubuntu/bat-openstack-dynamic.yml 
+  391  bundle exec rake bat
+  392  env
+  393  /home/ubuntu/.microbosh/ssh/firstbosh
+  394  chmod a+r /home/ubuntu/.microbosh/ssh/firstbosh
+  395  bundle exec rake bat
+  396  bosh micro cck
+  397  ls -al
+  398  cp firstbosh ~/.ssh/id_rsa
+  399  bundle exec rake bat
+  400  cd
+  401  ls
+  402  ls -al
+  403  df -h
+  404  Pending:
+  405  Failures:
+  406  Finished in 53 minutes 47 seconds
+  407  91 examples, 1 failure, 4 pending
+  408  git clone -b release-candidate git://github.com/cloudfoundry/cf-release.git
+  409  ls -al
+  410  cd cf-release/
+  411  bosh upload release releases/cf-146.yml 
+  412  chruby
+  413  chruby install ruby-1.9.3-p484
+  414  chruby ruby-1.9.3-p484
+  415  chruby help
+  416  chruby --help
+  417  ruby-install --help
+  418  ruby-install 1.9.3-p484
+  419  ruby-install ruby 1.9.3-p484
+  420  chruby ruby-1.9.3-p484
+  421  chruby 1.9.3-p484
+  422  chruby 
+  423  chruby /opt/rubies/ruby-1.9.3-p484
+  424  source /usr/local/share/chruby/chruby.sh
+  425  chruby 
+  426  chruby ruby-1.9.3-p484
+  427  bosh upload release releases/cf-146.yml 
+  428  ls -al
+  429  cd
+  430  ls
+  431  cd bosh
+  432  ls
+  433  ls -al
+  434  gem install
+  435  bundle exec install bosh
+  436  bundle exec install
+  437  bundle install
+  438  gem install eventmachine -v '0.12.10'
+  439  cd
+  440  gem install bosh
+  441  cd cf-release/
+  442  gem install bosh_cli_plugin_micro --pre
+  443  gem install bosh_cli_plugin_micro --pre --no-rdoc -no-ri
+  444  bosh release upload releases/cf-149.yml 
+  445  bosh upload release releases/cf-149.yml 
+  446  bosh releases
+  447  bosh stemcells
+  448  wget https://bosh-jenkins-artifacts.s3.amazonaws.com/bosh-stemcell/openstack/bosh-stemcell-1256-openstack-kvm-ubuntu.tgz
+  449  bosh upload bosh-stemcell-1256-openstack-kvm-ubuntu.tgz 
+  450  bosh upload stemcell bosh-stemcell-1256-openstack-kvm-ubuntu.tgz 
+  451  bosh deployment ~/.microbosh/deployments/cf/cf.yml 
+  452  bosh deploy
+  453  cd
+  454  ls -al
+  455  git clone https://github.com/cloudfoundry/cf-services-contrib-release.git
+  456  cd cf-services-contrib-release/
+  457  ls
+  458  ls -al
+  459  bosh upload release releases/cf-services-contrib-2.yml 
+  460  ls -al
+  461  ruby --version
+  462  ls -al
+  463  cd ..
+  464  ls -al
+  465  cd cf-services-contrib-release/
+  466  ls
+  467  ls -al
+  468  cd config/
+  469  ls
+  470  ls -al
+  471  cd ..
+  472  ls -al
+  473  cd src/
+  474  ls -al
+  475  cd ..
+  476  ruby --verison
+  477  ruby --version
+  478  chruby ruby-1.9.3-p484
+  479  bosh upload release cf-services-contrib-release/releases/cf-services-contrib-2.yml 
+  480  bosh upload release ./cf-services-contrib-release/releases/cf-services-contrib-2.yml 
+  481  cd cf-services-contrib-release/
+  482  ls
+  483  ls -al
+  484  ruby --verison
+  485  ruby --version
+  486  bosh upload release releases/cf-services-contrib-2.yml 
+  487  cd ..
+  488  bosh deployment ~/.microbosh/deployments/cf/cf.yml 
+  489  bosh deploy
+  490  bosh releases
+  491  vim .microbosh/deployments/cf/cf.yml 
+  492  bosh deployment ~/.microbosh/deployments/cf/cf.yml 
+  493  bosh deploy
+  494  git clone git@github.com:cloudfoundry-community/admin-ui-boshrelease.git
+  495  cd admin-ui-boshrelease/
+  496  bosh upload release releases/admin-ui-2.yml
+  497  cd ..
+  498  bosh deploy
+  499  vim .microbosh/deployments/cf/cf.yml 
+  500  bosh deployment ~/.microbosh/deployments/cf/cf.yml 
+  501  bosh deploy
+  502  vim .microbosh/deployments/cf/cf.yml 
+  503  bosh deployment ~/.microbosh/deployments/cf/cf.yml 
+  504  bosh deploy
+  505  bosh cck
+  506  bosh status
+  507  cf target 205.234.30.249
+  508  gem install cf
+  509  cf target api.somegood.org
+  510  bosh cck
+  511  bosh deploy --help
+  512  bosh deploy
+  513  cf target api.somegood.org
+  514  cf target http://api.somegood.org
+  515  cf target 205.234.30.249
+  516  ping 205.234.30.249
+  517  ssh vcap@205.234.30.249
+  518  ssh vcap@205.234.30.249 -i .ssh/id_rsa 
+  519  :q
+  520  ls
+  521  ls -al
+  522  vim .microbosh/deployments/cf/cf.yml 
+  523  vim .microbosh/deployments/firstbosh/micro_bosh.yml 
+  524  bosh micro deploy
+  525  bosh micro status
+  526  bosh micro deployment
+  527  bosh micro deploy .microbosh/deployments/firstbosh/bosh-stemcell-latest-openstack-kvm-ubuntu.tgz 
+  528  bosh micro deploy --update-if-exists .microbosh/deployments/firstbosh/bosh-stemcell-latest-openstack-kvm-ubuntu.tgz 
+  529  bosh micro deploy --update .microbosh/deployments/firstbosh/bosh-stemcell-latest-openstack-kvm-ubuntu.tgz 
+  530  bosh micro target
+  531  bosh micro status
+  532  bosh micro deployment
+  533  bosh micro deploy
+  534  bosh micro deploy /home/ubuntu/.microbosh/deployments/firstbosh/micro_bosh.yml 
+  535  bosh micro deploy /home/ubuntu/.microbosh/deployments/firstbosh/micro_bosh.yml --update
+  536  ./bosh-bootstrap/bin/bosh-bootstrap deploy
+  537  ./bosh-bootstrap/bin/bosh-bootstrap 
+  538  cd bosh-bootstrap/
+  539  ls
+  540  bundle install
+  541  cd ..
+  542  ./bosh-bootstrap/bin/bosh-bootstrap deploy
+  543  cd bosh-bootstrap/
+  544  ls
+  545  ls -al
+  546  bundle exec bosh micro
+  547  pwd
+  548  cd
+  549  bosh deploy
+  550  bosh delete deployment
+  551  bosh delete deployment cf --force
+  552  bosh deployment .microbosh/deployments/cf/cf.yml 
+  553  bosh deploy
+  554  bosh delete deployment cf --force
+  555  bosh deployment .microbosh/deployments/cf/cf.yml 
+  556  bosh deploy
+  557  bosh delete deployment cf --force
+  558  bosh deployment .microbosh/deployments/cf/cf.yml 
+  559  bosh deploy
+  560  bosh cck
+  561  bosh deploy
+  562  bosh delete deployment cf --force
+  563  bosh cck
+  564  bosh deploy --update
+  565  bosh deploy --recreate
+  566  bosh delete deployment cf --force
+  567  bosh deploy
+  568  bosh micro deploy
+  569  bosh micro deployment
+  570  bosh micro status
+  571  bosh micro deploy --recreate
+  572  bosh micro deploy .microbosh/deployments/firstbosh/bosh-stemcell-latest-openstack-kvm-ubuntu.tgz --update-if-exists
+  573  bosh status
+  574  bosh deploy
+  575  bosh micro status
+  576  vim .microbosh/deployments/cf/cf.yml 
+  577  bosh deploy
+  578  ls -al
+  579  cd cf-release/
+  580  ls -al
+  581  bosh upload release releases/cf-149.yml 
+  582  cd ..
+  583  ls
+  584  cd cf-services-contrib-release/
+  585  ls
+  586  bosh upload release releases/cf-services-contrib-2.yml 
+  587  chruby ruby-1.9.3-p484
+  588  bosh upload release releases/cf-services-contrib-2.yml 
+  589  cd ..
+  590  ls
+  591  ls -al
+  592  cd admin-ui-boshrelease/
+  593  bosh upload release releases/admin-ui-2.yml 
+  594  cd
+  595  ls -al
+  596  bosh deploy
+  597  bosh stemcell
+  598  bosh stemcells
+  599  wget https://bosh-jenkins-artifacts.s3.amazonaws.com/bosh-stemcell/openstack/bosh-stemcell-1256-openstack-kvm-ubuntu.tgz
+  600  bosh upload stemcell bosh-stemcell-1256-openstack-kvm-ubuntu.tgz 
+  601  bosh deploy
+  602  bosh deploy --update
+  603  bosh cck
+  604  bosh deploy
+  605  bosh task 7 --debug
+  606  bosh delete deployment -n
+  607  bosh -n delete deployment
+  608  bosh delete deployment
+  609  bosh -n delete deployment cf
+  610  bosh deploy
+  611  bosh -n delete deployment cf
+  612  bosh deploy
+  613  ssh ubuntu@10.2.3.9
+  614  bosh -n delete deployment cf
+  615  bosh deploy
+  616  bosh -n delete deployment cf
+  617  bosh deploy
+  618  bosh -n delete deployment cf
+  619  vim .microbosh/deployments/cf/cf.yml 
+  620  bosh deployment .microbosh/deployments/cf/cf.yml 
+  621  bosh deploy
+  622  bosh -n delete deployment cf
+  623  vim .microbosh/deployments/cf/cf.yml 
+  624  bosh deploy
+  625  vim .microbosh/deployments/cf/cf.yml 
+  626  bosh deploy
+  627  bosh -n delete deployment cf
+  628  bosh deploy
+  629  bosh -n delete deployment cf
+  630  bosh deploy
+  631  vim .microbosh/deployments/cf/cf.yml 
+  632  bosh cck
+  633  vim .microbosh/deployments/cf/cf.yml 
+  634  bosh deploy
+  635  cf target api.somegood.org
+  636  cf
+  637  cf target 205.234.30.249
+  638  cf target somegood.org
+  639  vim .microbosh/deployments/cf/cf.yml 
+  640  cf target http://api.somegood.org
+  641  cf login
+  642  cf create-org demo
+  643  cf create-space development
+  644  cf switch-space development
+  645  git clone https://github.com/cloudfoundry-community/cf_demoapp_ruby_rack.git
+  646  cd cf_demoapp_ruby_rack/
+  647  bundle 
+  648  cf push
+  649  cd
+  650  ls
+  651  cd cf_demoapp_ruby_rack/
+  652  cf --help
+  653  cf apps
+  654  cf app hello
+  655  cf push --instances 5
+  656  ls -al
+  657  cd ..
+  658  ls
+  659  ls -al
+  660  cd .microbosh/deployments/
+  661  ls
+  662  ls -al
+  663  cd firstbosh/
+  664  ls
+  665  ls -al
+  666  history
+  667  history > ~/myhistory.txt

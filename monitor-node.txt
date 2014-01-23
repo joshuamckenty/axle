@@ -1,0 +1,23 @@
+
+
+apt-get install daemontools
+apt-get install lsof
+
+
+root@monitor-2:/etc/syslog-ng# diff syslog-ng.conf syslog-ng.conf.orig 
+11d10
+<     log_msg_size(16384);
+23,35d21
+< };
+< 
+< source s_remote {
+<     udp(ip("0.0.0.0") port(514));
+< };
+< 
+< destination d_local_remote {
+<     program("multilog s10485760 n13 xcmessages /var/log");
+< };
+< 
+< log {
+<     source(s_remote);
+<     destination(d_local_remote);

@@ -1,0 +1,75 @@
+chruby ruby-1.9.3-p484
+
+git@github.com:cloudfoundry-community/admin-ui-boshrelease.git
+
+# cat .bashrc
+####
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+chruby ruby-1.9.3-p484
+
+export BAT_DIRECTOR="205.234.30.251"
+export BAT_STEMCELL="/home/ubuntu/.microbosh/deployments/firstbosh/bosh-stemcell-latest-openstack-kvm-ubuntu.tgz"
+export BAT_DEPLOYMENT_SPEC="/home/ubuntu/bat-openstack-dynamic.yml"
+export BAT_VCAP_PASSWORD="c1oudc0w"
+export BAT_DNS_HOST="205.234.30.251"
+export BOSH_KEY_PATH="/home/ubuntu/.microbosh/ssh/firstbosh"
+
+# env['BAT_VCAP_PRIVATE_KEY'] = env['BOSH_OPENSTACK_PRIVATE_KEY'] || env['BOSH_KEY_PATH']
+
+root@inception:~# cat bat-openstack-dynamic.yml 
+---
+cpi: openstack
+properties:
+  static_ip: 205.234.30.250 # floating IP to use for the bat-release jobs
+  uuid: 4b9e557d-9064-4f49-97cb-fcca7969a11a # BAT_DIRECTOR UUID
+  pool_size: 1
+  stemcell:
+    name: bosh-openstack-kvm-ubuntu
+    version: latest
+  instances: 1
+  key_name: firstbosh # OpenStack key name
+  network:
+    type: dynamic
+    cloud_properties:
+      net_id: 0694055f-d310-4979-a8cc-4b1b3bc86ac4
+      security_groups:
+        - default
+  mbus: nats://nats:0b450ada9f830085e2cdeff6@10.42.49.80:4222 # Not used now, but don't remove
+
+
+
+root@inception:~# ls -al
+total 375288
+drwxr-xr-x 16 ubuntu ubuntu      4096 Dec 23 18:51 .
+drwxr-xr-x  3 root   root        4096 Dec  1 00:41 ..
+drwxr-xr-x 11 root   root        4096 Dec 21 00:21 admin-ui-boshrelease
+-rw-------  1 root   root        1508 Dec 18 18:37 .bash_history
+-rw-r--r--  1 ubuntu ubuntu       220 Mar 30  2013 .bash_logout
+-rw-r--r--  1 ubuntu ubuntu      4185 Dec 20 18:44 .bashrc
+-rw-r--r--  1 root   root         549 Dec 19 21:44 bat-openstack-dynamic.yml
+drwxr-xr-x 29 root   root        4096 Dec 20 01:45 bosh
+drwxr-xr-x  6 root   root        4096 Dec 21 04:00 bosh-bootstrap
+-rw-------  1 root   root         579 Dec 21 06:37 .bosh_config
+-rw-------  1 root   root         391 Dec 21 04:50 .bosh_deployer_config
+-rw-r--r--  1 root   root        1190 Dec 21 04:48 bosh-deployments.yml
+-rw-r--r--  1 root   root        4033 Dec 21 04:48 bosh-registry.log
+-rw-r--r--  1 root   root   384143912 Nov  5 18:25 bosh-stemcell-1256-openstack-kvm-ubuntu.tgz
+drwx------  2 ubuntu ubuntu      4096 Dec  1 00:43 .cache
+drwxr-xr-x  3 root   root        4096 Dec 21 08:21 .cf
+drwxr-xr-x  3 root   root        4096 Dec 21 08:23 cf_demoapp_ruby_rack
+drwxr-xr-x 13 root   root        4096 Dec 20 23:55 cf-release
+drwxr-xr-x 10 root   root        4096 Dec 21 00:10 cf-services-contrib-release
+-rw-------  1 root   root        1675 Dec 20 01:27 firstbosh
+drwxr-xr-x  7 root   root        4096 Dec  2 02:12 fog
+-rw-r--r--  1 root   root         174 Dec 20 18:00 .fog
+drwxr-xr-x  3 root   root        4096 Dec  2 00:17 .inception_server
+drwxr-xr-x 13 root   root        4096 Dec  2 00:59 inception-server
+drwxr-xr-x  4 root   root        4096 Dec 19 21:05 .microbosh
+-rw-rw-rw-  1 root   root       17922 Dec 23 18:51 myhistory.txt
+-rw-r--r--  1 ubuntu ubuntu       675 Mar 30  2013 .profile
+drwx------  2 ubuntu ubuntu      4096 Dec 20 19:22 .ssh
+drwxr-xr-x  2 root   root        4096 Dec 19 18:46 .vim
+-rw-------  1 root   root       10324 Dec 21 08:21 .viminfo
+
+
