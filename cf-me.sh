@@ -31,4 +31,5 @@ chmod a+x replace.sh
 ./replace.sh cf.yml.template cf.yml ~/credentials.sh
 bosh deployment cf.yml
 
-
+gem install cf
+cf target http://api.$DNS_SUBZONE
