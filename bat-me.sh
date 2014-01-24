@@ -17,8 +17,8 @@ export BOSH_UUID="41b2be0e-6a9c-4a88-a227-277a6823c79c"
 
 cd ~/bosh-workspace/
 
-curl -O https://gist.github.com/joshuamckenty/8592587/raw/9f7e52d86a903d388af56952ed710c8aa6fc10ed/bat-openstack-dynamic.yml.template
-curl -O https://gist.github.com/joshuamckenty/8592327/raw/da7ba5162f69349e4bbf2ce4a8eb0eb4ff8999eb/replace.sh
+curl -O https://gist.github.com/joshuamckenty/8592587/raw/bat-openstack-dynamic.yml.template
+curl -O https://gist.github.com/joshuamckenty/8592327/raw/replace.sh
 chmod a+x replace.sh
 ./replace.sh bat-openstack-dynamic.yml.template bat-openstack-dynamic.yml ~/credentials.sh
 

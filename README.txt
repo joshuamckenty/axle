@@ -1,9 +1,10 @@
-Step 0. Set up Piston OpenStack with CF-friendly config options:
+PROJECT AXLE: DEVCLOUD with OpenStack and Cloud Foundry
+-------------------------------------------------------
+
+Step 0. Set up Piston OpenStack 3.0 with CF-friendly config options:
  - Fast Delete
  - GroupAntiAffinity filters enabled
  - LVM CoW enabled for fast stemcell launching
-
-
 
 Step 1. Log into the dashboard with admin credentials (as set in the cloud.conf file)
  - Go to the project panel, the Access & Security tab, and click on "API Access". Download OpenStack RC File.
@@ -15,7 +16,6 @@ Step 2. Go to the "Networks" Tab, click on "cloud" network. Write down the ID. R
 
 Step 3. Tab "Images and Snapshots", Create Image. Use http://uec-images.ubuntu.com/raring/current/raring-server-cloudimg-amd64-disk1.img and make it public. Name it "raring" and write down the ID.
 
-
 Step 4. Customize your openstack rc file:
  - Include your password
  - Add the cloud net id
@@ -25,12 +25,14 @@ Step 4. Customize your openstack rc file:
  - Allocate a floating ip for CF and add it
  - Add your wildcarded DNS for that IP
 
+```bash
 export cloud_net_id=3b9e14ce-cb78-4cfa-9215-6b0914a22394
 export allocated_floating_ip=205.234.30.254
 export static_ip=10.2.3.100
 export bat_floating_ip=205.234.30.253
 export CF_FLOATING_IP=205.234.30.252
 export DNS_SUBZONE=somegood.org
+```
 
 Step 4. Source the openstack rc file and run your bootstrap script.
  - It will create the right flavors, and boot an inception VM.

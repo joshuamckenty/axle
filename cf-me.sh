@@ -25,8 +25,10 @@ bosh upload release releases/cf-services-contrib-2.yml
 
 mkdir -p ~/bosh-workspace/deployments/cf
 cd ~/bosh-workspace/deployments/cf
-curl -O https://gist.github.com/joshuamckenty/8593730/raw/e6bc93e2ee931ca82d9fab949c54ddcdf32b58dd/cf.yml.template
-curl -O https://gist.github.com/joshuamckenty/8592327/raw/da7ba5162f69349e4bbf2ce4a8eb0eb4ff8999eb/replace.sh
+curl -O https://gist.github.com/joshuamckenty/8593730/raw/cf.yml.template
+curl -O https://gist.github.com/joshuamckenty/8592327/raw/replace.sh
 chmod a+x replace.sh
 ./replace.sh cf.yml.template cf.yml ~/credentials.sh
 bosh deployment cf.yml
+
+
