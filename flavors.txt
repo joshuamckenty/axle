@@ -1,8 +1,0 @@
-Flavor Name	  VCPUs	RAM		Root Disk Ephemeral Disk	Swap Disk	ID
-m1.tiny			1	512MB		0		0					0MB		1
-m1.small		1	2048MB		10		0					0MB		2403980c-00b1-4bb8-80c5-d26e56ae2d98 
-m1.medium		2	4096MB		10		0					0MB		7871d5de-afeb-4911-8ec1-a2692bcab98b
-m1.microbosh	2	4096MB		10		0					0MB		e4b1a31d-23bc-4c79-8271-716f4c478658
-m1.large		4	8192MB		80		0					0MB		4 
-m1.xlarge		8	16384MB		160		0					0MB		5
-
