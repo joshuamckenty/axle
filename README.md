@@ -60,6 +60,8 @@ ssh ubuntu@$INCEPTION_VM 'bash -s' < bat-me.sh
 ssh ubuntu@$INCEPTION_VM 'bash -s' < cf-me.sh
 ```
 
+_TODO: don't hardcode private ranges, use dynamic for now._
+
 1. Install an app on CF to prove it worked:
 ```bash
 gem install cf
