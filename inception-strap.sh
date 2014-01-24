@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source ~/credentials.sh
+
 sudo apt-get update
 sudo apt-get install -y git-core build-essential libsqlite3-dev curl rsync git-core libmysqlclient-dev libxml2-dev libxslt-dev libpq-dev libsqlite3-dev libcurl4-gnutls-dev runit genisoimage debootstrap kpartx qemu-kvm whois tmux vim
 sudo apt-get install -y python-novaclient
@@ -11,7 +13,6 @@ cd bosh
 bundle install --binstubs
 export PATH=~/bosh/bin:$PATH
 
-source ~/credentials.sh
 
 ssh-keygen -q -f ~/.ssh/microbosh -N ''
 mkdir -p ~/bosh-workspace/deployments/microbosh-openstack
@@ -23,12 +24,12 @@ chmod a+x replace.sh
 
 mkdir -p ~/bosh-workspace/stemcells
 cd ~/bosh-workspace/stemcells
-bosh download public stemcell bosh-stemcell-1840-openstack-kvm-ubuntu.tgz
+wget http://bosh-jenkins-artifacts.s3.amazonaws.com/bosh-stemcell/openstack/bosh-stemcell-latest-openstack-kvm-ubuntu.tgz
 
 cd ~/bosh-workspace/deployments
 bosh micro deployment microbosh-openstack
 
-bosh -n micro deploy ~/bosh-workspace/stemcells/bosh-stemcell-1840-openstack-kvm-ubuntu.tgz
+bosh -n micro deploy ~/bosh-workspace/stemcells/bosh-stemcell-latest-openstack-kvm-ubuntu.tgz
 
 # DO ME BY HAND
 # bosh target $allocated_floating_ip

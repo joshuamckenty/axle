@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 
 # nova keypair-add --pub-key ~/.ssh/id_rsa.pub josh-macbook-air
-# nova flavor-create --is-public true m1.microbosh 1337 4096 20 2
-# 
-# nova boot --flavor m1.microbosh --image-with Checksum=243b5ab4d68d1e22321f247ab8ae912d --num-instances 1 --key-name josh-macbook-air --nic net-id=
 
 import os
 

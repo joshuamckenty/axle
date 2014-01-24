@@ -1,77 +1,6 @@
 
   299  curl -s http://spiff.cfapps.io/install.sh | bash
-  300  bosh ssh
-  301  cd
-  302  bosh deployments
-  303  bosh micro ssh
-  304  bosh micro help
-  305  bosh micro
-  306  bosh micro agent ping
-  307  bosh micro deployments
-  308  bosh deployments
-  309  bosh target
-  310  bosh status
-  311  bosh upload stemcell http://bosh-jenkins-artifacts.s3.amazonaws.com/bosh-stemcell/openstack/bosh-stemcell-latest-openstack-kvm-ubuntu.tgz
-  312  bosh stemcells
 
-  408  git clone -b release-candidate git://github.com/cloudfoundry/cf-release.git
-  409  ls -al
-  410  cd cf-release/
-  411  bosh upload release releases/cf-146.yml 
-  446  bosh releases
-  447  bosh stemcells
-  448  wget https://bosh-jenkins-artifacts.s3.amazonaws.com/bosh-stemcell/openstack/bosh-stemcell-1256-openstack-kvm-ubuntu.tgz
-  449  bosh upload bosh-stemcell-1256-openstack-kvm-ubuntu.tgz 
-  450  bosh upload stemcell bosh-stemcell-1256-openstack-kvm-ubuntu.tgz 
-  451  bosh deployment ~/.microbosh/deployments/cf/cf.yml 
-  452  bosh deploy
-  453  cd
-  454  ls -al
-  455  git clone https://github.com/cloudfoundry/cf-services-contrib-release.git
-  456  cd cf-services-contrib-release/
-  457  ls
-  458  ls -al
-  459  bosh upload release releases/cf-services-contrib-2.yml 
-  479  bosh upload release cf-services-contrib-release/releases/cf-services-contrib-2.yml 
-  480  bosh upload release ./cf-services-contrib-release/releases/cf-services-contrib-2.yml 
-
-  486  bosh upload release releases/cf-services-contrib-2.yml 
-  488  bosh deployment ~/.microbosh/deployments/cf/cf.yml 
-  489  bosh deploy
-  490  bosh releases
-  491  vim .microbosh/deployments/cf/cf.yml 
-  492  bosh deployment ~/.microbosh/deployments/cf/cf.yml 
-  493  bosh deploy
-
-  494  git clone git@github.com:cloudfoundry-community/admin-ui-boshrelease.git
-  495  cd admin-ui-boshrelease/
-  496  bosh upload release releases/admin-ui-2.yml
-  497  cd ..
-  498  bosh deploy
-  499  vim .microbosh/deployments/cf/cf.yml 
-  500  bosh deployment ~/.microbosh/deployments/cf/cf.yml 
-  501  bosh deploy
-  502  vim .microbosh/deployments/cf/cf.yml 
-  503  bosh deployment ~/.microbosh/deployments/cf/cf.yml 
-  504  bosh deploy
-  505  bosh cck
-  506  bosh status
-  507  cf target 205.234.30.249
-  508  gem install cf
-  509  cf target api.somegood.org
-  510  bosh cck
-  511  bosh deploy --help
-  512  bosh deploy
-  513  cf target api.somegood.org
-  514  cf target http://api.somegood.org
-  515  cf target 205.234.30.249
-
-  549  bosh deploy
-  635  cf target api.somegood.org
-  636  cf
-  637  cf target 205.234.30.249
-  638  cf target somegood.org
-  639  vim .microbosh/deployments/cf/cf.yml 
   640  cf target http://api.somegood.org
   641  cf login
   642  cf create-org demo
@@ -81,10 +10,5 @@
   646  cd cf_demoapp_ruby_rack/
   647  bundle 
   648  cf push
-  649  cd
-  650  ls
-  651  cd cf_demoapp_ruby_rack/
-  652  cf --help
-  653  cf apps
   654  cf app hello
   655  cf push --instances 5

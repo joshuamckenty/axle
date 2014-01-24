@@ -6,7 +6,7 @@ export PATH=~/bosh/bin:$PATH
 source ~/credentials.sh
 
 export BAT_DIRECTOR=$allocated_floating_ip
-export BAT_STEMCELL="/home/ubuntu/bosh-workspace/stemcells/bosh-stemcell-1840-openstack-kvm-ubuntu.tgz"
+export BAT_STEMCELL="/home/ubuntu/bosh-workspace/stemcells/bosh-stemcell-latest-openstack-kvm-ubuntu.tgz"
 export BAT_DEPLOYMENT_SPEC="/home/ubuntu/bosh-workspace/bat-openstack-dynamic.yml"
 export BAT_VCAP_PASSWORD="c1oudc0w"
 export BAT_DNS_HOST=$allocated_floating_ip
