@@ -59,6 +59,63 @@ try:
 except:
 	pass	
 
+try:
+	secgroup = nova.security_groups.find("bosh")
+except:
+	secgroup = nova.security_groups.create("bosh", "Bosh Security Group")
+	nova.security_group_rules.create(secgroup.id, ip_protocol="icmp",
+	                                 from_port=-1, to_port=-1)
+	nova.security_group_rules.create(secgroup.id, ip_protocol="tcp",
+	                                 from_port=1, to_port=65535, group_id=secgroup.id)
+	nova.security_group_rules.create(secgroup.id, ip_protocol="tcp",
+	                                 from_port=4222, to_port=4222)
+	nova.security_group_rules.create(secgroup.id, ip_protocol="tcp",
+	                                 from_port=53, to_port=53)
+	nova.security_group_rules.create(secgroup.id, ip_protocol="tcp",
+	                                 from_port=25777, to_port=25777)
+	nova.security_group_rules.create(secgroup.id, ip_protocol="tcp",
+	                                 from_port=25555, to_port=25555)
+	nova.security_group_rules.create(secgroup.id, ip_protocol="tcp",
+	                                 from_port=25252, to_port=25252)
+	nova.security_group_rules.create(secgroup.id, ip_protocol="tcp",
+	                                 from_port=6868, to_port=6868)
+	nova.security_group_rules.create(secgroup.id, ip_protocol="udp",
+	                                 from_port=53, to_port=53)
+	nova.security_group_rules.create(secgroup.id, ip_protocol="udp",
+	                                 from_port=68, to_port=68)
+
+try:
+	secgroup = nova.security_groups.find("ssh")
+except:
+	secgroup = nova.security_groups.create("ssh", "SSH Security Group")
+	nova.security_group_rules.create(secgroup.id, ip_protocol="icmp",
+	                                 from_port=-1, to_port=-1)
+	nova.security_group_rules.create(secgroup.id, ip_protocol="tcp",
+	                                 from_port=22, to_port=22)
+	nova.security_group_rules.create(secgroup.id, ip_protocol="udp",
+	                                 from_port=68, to_port=68)
+
+try:
+	secgroup = nova.security_groups.find("cf-public")
+except:
+	secgroup = nova.security_groups.create("cf-public", "CF-Public Group")
+	nova.security_group_rules.create(secgroup.id, ip_protocol="tcp",
+	                                 from_port=80, to_port=80)
+	nova.security_group_rules.create(secgroup.id, ip_protocol="tcp",
+	                                 from_port=443, to_port=443)
+	nova.security_group_rules.create(secgroup.id, ip_protocol="udp",
+	                                 from_port=68, to_port=68)
+
+try:
+	secgroup = nova.security_groups.find("cf-private")
+except:
+	secgroup = nova.security_groups.create("cf-private", "CF-Private Group")
+	nova.security_group_rules.create(secgroup.id, ip_protocol="tcp",
+	                                 from_port=1, to_port=65535, group_id=secgroup.id)
+	nova.security_group_rules.create(secgroup.id, ip_protocol="udp",
+	                                 from_port=68, to_port=68)
+
+
 fip = nova.floating_ips.create(nova.networks.find(label="public").id)
 
 server = nova.servers.create(name='inception', 

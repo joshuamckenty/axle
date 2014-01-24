@@ -1,6 +1,7 @@
 
 Step 1. Log into the dashboard with admin credentials (as set in the cloud.conf file)
  - Go to the project panel, the Access & Security tab, and click on "API Access". Download OpenStack RC File.
+ (Edit it to include the password for now).
 
 Step 2. Go to the "Networks" Tab, click on "cloud" network. Write down the ID. Repeat with the "Public" network.
  - 3b9e14ce-cb78-4cfa-9215-6b0914a22394 (cloud)
@@ -12,7 +13,9 @@ Step 4. Source the openstack rc file and run your bootstrap script.
  - It will create the right flavors, and boot an inception VM.
  export INCEPTION_VM=`python bootstrap.sh`
  <wait a few minutes here...>
+ scp admin-openrc-RegionOne.sh ubuntu@$INCEPTION_VM:~/credentials.sh
  ssh ubuntu@$INCEPTION_VM 'bash -s' < inception-strap.sh
+
 
 
 
