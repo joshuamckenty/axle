@@ -30,6 +30,7 @@ curl -O https://gist.github.com/joshuamckenty/8592327/raw/replace.sh
 chmod a+x replace.sh
 ./replace.sh cf.yml.template cf.yml ~/credentials.sh
 bosh deployment cf.yml
+bosh -n deploy
 
 gem install cf
 cf target http://api.$DNS_SUBZONE

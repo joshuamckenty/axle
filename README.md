@@ -16,6 +16,9 @@ PROJECT AXLE: DEVCLOUD with OpenStack and Cloud Foundry
 
 1. Tab "Images and Snapshots", Create Image. Use http://uec-images.ubuntu.com/raring/current/raring-server-cloudimg-amd64-disk1.img and make it public. Name it "raring" and write down the ID.
 
+1. Go to the admin panel, Projects, and set quota for the admin project to -1 for every field.
+_TODO: do this in inception.sh instead_
+
 1. Customize your openstack rc file:
  - Include your password
  - Add the cloud net id
@@ -46,7 +49,6 @@ scp ~/Downloads/admin-openrc-RegionOne.sh ubuntu@$INCEPTION_VM:~/credentials.sh
 ssh ubuntu@$INCEPTION_VM 'bash -s' < inception-strap.sh
 ```
 
-_TODO: Set Quotas_
 
 1. Run BAT to validate your BOSH environment
 ```bash
