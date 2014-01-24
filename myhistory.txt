@@ -1,14 +1,3 @@
 
   299  curl -s http://spiff.cfapps.io/install.sh | bash
 
-  640  cf target http://api.somegood.org
-  641  cf login
-  642  cf create-org demo
-  643  cf create-space development
-  644  cf switch-space development
-  645  git clone https://github.com/cloudfoundry-community/cf_demoapp_ruby_rack.git
-  646  cd cf_demoapp_ruby_rack/
-  647  bundle 
-  648  cf push
-  654  cf app hello
-  655  cf push --instances 5

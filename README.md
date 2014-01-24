@@ -34,33 +34,44 @@ export CF_FLOATING_IP=205.234.30.252
 export DNS_SUBZONE=somegood.org
 ```
 
+_TODO: default number of retries_
+
 Step 4. Source the openstack rc file and run your bootstrap script.
  - It will create the right flavors, and boot an inception VM.
- export INCEPTION_VM=`python bootstrap.sh`
- <wait a few minutes here...>
- scp admin-openrc-RegionOne.sh ubuntu@$INCEPTION_VM:~/credentials.sh
- ssh ubuntu@$INCEPTION_VM 'bash -s' < inception-strap.sh
+```bash
+export INCEPTION_VM=`python bootstrap.sh`
+# wait a few minutes here...
+scp ~/Downloads/admin-openrc-RegionOne.sh ubuntu@$INCEPTION_VM:~/credentials.sh
+ssh ubuntu@$INCEPTION_VM 'bash -s' < inception-strap.sh
+```
 
+_TODO: Set Quotas_
 
 Step 5. Run BAT to validate your BOSH environment
- ssh ubuntu@$INCEPTION_VM 'bash -s' < bat-me.sh
-
-
-
-# TODO: Set Quotas
-# TODO: state timeouts... state_timeout: 600
-# TODO: default number of retries
+```bash
+ssh ubuntu@$INCEPTION_VM 'bash -s' < bat-me.sh
+```
 
 Step 6. Install CF as a BOSH Release
- ssh ubuntu@$INCEPTION_VM 'bash -s' < cf-me.sh
- - Cf.yml
- - Git checkouts:
-  - git@github.com:cloudfoundry-community/admin-ui-boshrelease.git
-  - cf-release
-  - cf-services-contrib-release
+```bash
+ssh ubuntu@$INCEPTION_VM 'bash -s' < cf-me.sh
+```
 
 Step 7. Install an app on CF to prove it worked:
- - cf_demoapp_ruby_rack
+```bash
+gem install cf
+cf target http://api.$DNS_SUBZONE
+cf login
+cf create-org demo
+cf create-space development
+cf switch-space development
+git clone https://github.com/cloudfoundry-community/cf_demoapp_ruby_rack.git
+cd cf_demoapp_ruby_rack/
+bundle 
+cf push
+cf app hello
+cf push --instances 5
+```
 
 BUILD ARTIFACTS TO INCLUDE IN AXLE PACKAGE: 
 ===========================================
