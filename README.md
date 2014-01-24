@@ -37,7 +37,9 @@ export DNS_SUBZONE=somegood.org
 _TODO: default number of retries_
 
 1. Source the openstack rc file and run your bootstrap script. It will create the right flavors, and boot an inception VM.
+
 ```bash
+
 export INCEPTION_VM=`python bootstrap.sh`
 # wait a few minutes here...
 scp ~/Downloads/admin-openrc-RegionOne.sh ubuntu@$INCEPTION_VM:~/credentials.sh
