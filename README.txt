@@ -9,6 +9,16 @@ Step 2. Go to the "Networks" Tab, click on "cloud" network. Write down the ID. R
 
 Step 3. Tab "Images and Snapshots", Create Image. Use http://uec-images.ubuntu.com/raring/current/raring-server-cloudimg-amd64-disk1.img and make it public. Name it "raring" and write down the ID.
 
+Step 4. Customize your openstack rc file:
+ - Include your password
+ - Add the cloud net id
+ - Allocate a floating ip for bosh and add it
+ - Allocate a static IP for bosh and add it
+
+export cloud_net_id=3b9e14ce-cb78-4cfa-9215-6b0914a22394
+export allocated_floating_ip=205.234.30.254
+export static_ip=10.2.3.100
+
 Step 4. Source the openstack rc file and run your bootstrap script.
  - It will create the right flavors, and boot an inception VM.
  export INCEPTION_VM=`python bootstrap.sh`
