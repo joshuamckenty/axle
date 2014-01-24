@@ -5,6 +5,7 @@ sudo apt-get install -y git-core build-essential libsqlite3-dev curl rsync git-c
 sudo apt-get install -y python-novaclient
 curl -sSL https://get.rvm.io | bash -s stable --ruby=1.9.3
 source /home/ubuntu/.rvm/scripts/rvm
+
 git clone https://github.com/cloudfoundry/bosh.git
 cd bosh
 bundle install --binstubs
@@ -28,3 +29,6 @@ cd ~/bosh-workspace/deployments
 bosh micro deployment microbosh-openstack
 
 bosh -n micro deploy ~/bosh-workspace/stemcells/bosh-stemcell-1840-openstack-kvm-ubuntu.tgz
+
+# DO ME BY HAND
+# bosh target $allocated_floating_ip

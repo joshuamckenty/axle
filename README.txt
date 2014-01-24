@@ -26,6 +26,10 @@ Step 4. Source the openstack rc file and run your bootstrap script.
  scp admin-openrc-RegionOne.sh ubuntu@$INCEPTION_VM:~/credentials.sh
  ssh ubuntu@$INCEPTION_VM 'bash -s' < inception-strap.sh
 
+# TODO: Set Quotas
+
+Step 5. Run BAT to validate your BOSH environment
+ ssh ubuntu@$INCEPTION_VM 'bash -s' < bat-me.sh
 
 
 
