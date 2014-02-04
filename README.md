@@ -1,5 +1,4 @@
-PROJECT AXLE: DEVCLOUD with OpenStack and Cloud Foundry
--------------------------------------------------------
+PROJECT 13: Automated provisioning of Hadoop and HiBench on OpenStack
 
 1. Set up Piston OpenStack 3.0 with CF-friendly config options:
  - Fast Delete
